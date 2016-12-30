@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 android.widget.LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(width/(rows+1),width/(rows+1));
                 imageView.setLayoutParams(lp);
                 grid.addView(imageView);
-
-
             }
         }
     }

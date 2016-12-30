@@ -35,6 +35,10 @@ public class Cell
         return (this.state == CellType.SHAPE && (cell.isSolid() || cell.isBlock()));
     }
 
+    public void setEmpty() {
+    this.state = CellType.EMPTY;
+}
+
     public void setShape() {
         this.state = CellType.SHAPE;
     }

@@ -77,7 +77,7 @@ public class Shape
      * Used for rotations
      * @return transposed matrix of current shape box
      */
-    private Cell[][] transposeShape() {
+    public Cell[][] transposeShape() {
         Cell[][] temp = new Cell[size][size];
         for(int y=0; y < size; y++) {
             for(int x=0; x < size; x++) {
@@ -171,7 +171,6 @@ public class Shape
             this.blocks[i].setShape();
         }
     }
-
     /**
      * Creates the matrix for the shape
      * @return
@@ -191,6 +190,10 @@ public class Shape
         this.location = new Point(x, y);
     }
 
+    public Cell [][] getShape(){
+        return shape;
+    }
+
     public Cell[] getBlocks() {
         return this.blocks;
     }
@@ -201,5 +204,9 @@ public class Shape
 
     public ShapeType getType() {
         return this.type;
+    }
+
+    public int getSize(){
+        return size;
     }
 }
