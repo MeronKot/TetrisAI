@@ -11,11 +11,20 @@
     tools:context="com.example.dell.tetrisai.UI.MainActivity">
 
     <GridLayout
-        android:id="@+id/tetBoard"
-        android:layout_width="300dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="26dp"
+        android:id="@+id/tetBoard2"
+        android:layout_height="300dp"
+        android:layout_width="150dp"
+        android:layout_alignTop="@+id/tetBoard1"
+        android:layout_alignParentEnd="true"></GridLayout>
+
+    <GridLayout
+        android:id="@+id/tetBoard1"
+        android:layout_height="300dp"
+        android:layout_marginTop="28dp"
+        android:layout_width="150dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_alignParentStart="true">
+
     </GridLayout>
+
 </RelativeLayout>

@@ -11,9 +11,7 @@ import java.util.Scanner;
 
 public class BotParser {
     final Scanner scan;
-
     final BotStarter bot;
-
     BotState currentState;
 
     public BotParser(BotStarter bot)

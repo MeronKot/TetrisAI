@@ -27,6 +27,11 @@ public class Shape
 
     // ACTIONS (no checks for errors are performed in the actions!)
 
+    public Shape clone()
+    {
+        return new Shape(this.type,this.field,this.location);
+    }
+
     /**
      * Rotates the shape counter-clockwise
      */
@@ -185,6 +190,51 @@ public class Shape
         return newShape;
     }
 
+    public void rotateShape(int numOfRota)
+    {
+        Cell[][] newCell;
+        for(int i=0; i< numOfRota; i++) {
+            newCell = new Cell[size][size];
+            switch (size) {
+                case 2:
+                    newCell[0][0] = this.shape[1][0];
+                    newCell[0][1] = this.shape[0][0];
+                    newCell[1][0] = this.shape[1][1];
+                    newCell[1][1] = this.shape[0][1];
+                    break;
+                case 3:
+                    newCell[0][0] = this.shape[2][0];
+                    newCell[0][1] = this.shape[1][0];
+                    newCell[0][2] = this.shape[0][0];
+                    newCell[1][0] = this.shape[2][1];
+                    newCell[1][1] = this.shape[1][1];
+                    newCell[1][2] = this.shape[0][1];
+                    newCell[2][0] = this.shape[2][2];
+                    newCell[2][1] = this.shape[1][2];
+                    newCell[2][2] = this.shape[0][2];
+                    break;
+                case 4:
+                    newCell[0][0] = this.shape[3][0];
+                    newCell[0][1] = this.shape[2][0];
+                    newCell[0][2] = this.shape[1][0];
+                    newCell[0][3] = this.shape[0][0];
+                    newCell[1][3] = this.shape[0][1];
+                    newCell[2][3] = this.shape[0][2];
+                    newCell[3][3] = this.shape[0][3];
+                    newCell[3][2] = this.shape[1][3];
+                    newCell[3][1] = this.shape[2][3];
+                    newCell[3][0] = this.shape[3][3];
+                    newCell[2][0] = this.shape[3][2];
+                    newCell[1][0] = this.shape[3][1];
+                    newCell[1][1] = this.shape[2][1];
+                    newCell[1][2] = this.shape[1][1];
+                    newCell[2][2] = this.shape[1][2];
+                    newCell[2][1] = this.shape[2][2];
+                    break;
+                }
+            this.shape = newCell;
+        }
+    }
 
     public void setLocation(int x, int y) {
         this.location = new Point(x, y);

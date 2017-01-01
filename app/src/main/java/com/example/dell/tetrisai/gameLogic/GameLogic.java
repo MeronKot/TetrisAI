@@ -27,6 +27,15 @@ public class GameLogic {
                 cells[i][j] = new Cell(i,j,CellType.EMPTY);
     }
 
+    public GameLogic cloneGrid()
+    {
+        GameLogic newGrid = new GameLogic(this.rows,this.cols);
+        for(int r=0; r<this.rows; r++)
+            for(int c=0; c<this.cols; c++)
+                newGrid.cells[r][c] = this.cells[r][c];
+        return newGrid;
+    }
+
     public int clearLines()
     {
         int distance = 0;
@@ -127,7 +136,7 @@ public class GameLogic {
         return total;
     }
 
-    private int bumpiness(){
+    public int bumpiness(){
         int total = 0;
         for(int c = 0 ; c < this.cols - 1; c++){
             total += Math.abs(this.getColHeight(c) - this.getColHeight(c + 1));

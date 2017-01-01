@@ -21,7 +21,6 @@ public class MyImageView extends ImageView
         super(context);
         this.row = row;
         this.col = col;
-        this.setBackgroundColor(Color.BLUE);
     }
 
     public int getRow() {
@@ -38,5 +37,14 @@ public class MyImageView extends ImageView
 
     public void setCol(int col) {
         this.col = col;
+    }
+
+
+    public Drawable getBackGround() {
+        return backGround;
+    }
+
+    public void setBackGround(Drawable backGround) {
+        this.backGround = backGround;
     }
 }
